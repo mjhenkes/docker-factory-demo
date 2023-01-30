@@ -1,0 +1,26 @@
+version: '3.8'
+
+# REPO_PREFIX is used in CI to deploy to other docker registries than dockerhub.
+
+services:
+
+  orig:
+    build:
+      context: .
+      dockerfile: ./1.orig.dockerfile
+  equivalent:
+    build:
+      context: .
+      dockerfile: ./2.equivalent.dockerfile
+  update-node:
+    build:
+      context: .
+      dockerfile: ./3.update-node.dockerfile
+  update-chrome:
+    build:
+      context: .
+      dockerfile: ./4.update-chrome.dockerfile
+  reduce:
+    build:
+      context: .
+      dockerfile: ./5.reduce.dockerfile
